@@ -1,0 +1,34 @@
+<!doctype html><meta charset="utf-8"><title>mock sim</title>
+<body style="background:#222;color:#ddd">
+<div id="tabs"></div>
+<img id="map" width="800" height="600" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='800' height='600' fill='green'/><circle cx='200' cy='200' r='40' fill='red'/><circle cx='500' cy='400' r='40' fill='yellow'/></svg>">
+<div id="tables"></div>
+<script>
+const DATA = {
+ 'Camp 1': {id:'48_2_17_86', enemy:[['BanditRecruit',10]], sols:[
+    ['Cavalry',155,100,0],['Soldier',155,99.5,0],['Knight',25,100,0],['EliteSoldier',230,100,1],['Cavalry',400,100,1]]},
+ 'Camp 2': {id:'48_3_15_79', enemy:[['BanditRecruit',5]], sols:[
+    ['Soldier',155,100,0],['Cavalry',25,100,1]]}
+};
+const gens=[
+ {id:'Halloween2019General1774462922',base:'Halloween2019General',name:'',amount:1,skills:{Skill_IncreaseCapacity:3}},
+ {id:'Ghost1',base:'GhostGeneral',name:'Ghost1',amount:1,skills:{}}
+];
+function url(c,u,n,gi){
+  const g=gens[gi];
+  return location.origin+'/simulator/?adventure=BountyHunterNew&buffs='+encodeURIComponent('[]')+
+ '&enemy='+encodeURIComponent(JSON.stringify([{id:DATA[c].id,units:DATA[c].enemy.map(e=>({id:e[0],amount:e[1]}))}]))+
+ '&player='+encodeURIComponent(JSON.stringify([{kind:'Default',general:g.id,units:[{id:u,amount:n}]}]))+
+ '&generals='+encodeURIComponent(JSON.stringify([g]));
+}
+function show(c){document.querySelectorAll('#tables table').forEach(t=>t.style.display=(t.dataset.c===c?'':'none'));}
+function build(c){const t=document.createElement('table');t.dataset.c=c;t.innerHTML='<thead><tr><th>#</th><th>Victory</th></tr></thead><tbody></tbody>';document.getElementById('tables').appendChild(t);const tb=t.querySelector('tbody');
+ DATA[c].sols.forEach((s,i)=>{const tr=document.createElement('tr');
+  tr.innerHTML='<td>'+(i+1)+'</td><td>'+s[2].toFixed(2)+'%</td><td><button>up</button><button class=o>open</button><button class=c title="Create link & copy to clipboard">copy</button></td>';
+  tr.querySelector('.c').onclick=()=>navigator.clipboard.writeText(url(c,s[0],s[1],s[3]));
+  tr.querySelector('.o').onclick=()=>window.open(url(c,s[0],s[1],s[3]));
+  tr.querySelector('button').onclick=()=>{window.__uploadClicked=true};
+  tb.appendChild(tr);});}
+for(const c in DATA){build(c);const b=document.createElement('button');b.textContent=c;b.onclick=()=>show(c);document.getElementById('tabs').appendChild(b);}
+show('Camp 1');
+</script>
