@@ -1,2 +1,3 @@
-2026/11/14-17:12:52.762 4bc0 Creating DB C:\Users\Peter\Desktop\GrokProjects\TSO_Sim\tso_sim_export\tso_sim_export\browser_profile\Default\shared_proto_db since it was missing.
-2026/11/14-17:12:52.809 4bc0 Reusing MANIFEST C:\Users\Peter\Desktop\GrokProjects\TSO_Sim\tso_sim_export\tso_sim_export\browser_profile\Default\shared_proto_db/MANIFEST-000001
+2026/11/15-14:10:55.451 34b8 Reusing MANIFEST C:\Users\Peter\Desktop\GrokProjects\TSO_Sim\tso_sim_export\tso_sim_export\browser_profile\Default\shared_proto_db/MANIFEST-000001
+2026/11/15-14:10:55.452 34b8 Recovering log #3
+2026/11/15-14:10:55.452 34b8 Reusing old log C:\Users\Peter\Desktop\GrokProjects\TSO_Sim\tso_sim_export\tso_sim_export\browser_profile\Default\shared_proto_db/000003.log 
