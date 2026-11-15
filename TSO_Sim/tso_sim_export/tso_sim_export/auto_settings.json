@@ -1,0 +1,145 @@
+{
+  "unit_kind": "BattleBuff",
+  "threads": 15,
+  "repetitions": 100,
+  "increment": 5,
+  "step": 5,
+  "only_max": false,
+  "merge": false,
+  "all_camps": true,
+  "skip_victory": true,
+  "sort": "Efficiency",
+  "exclude": [],
+  "units": {
+    "Recruit": {
+      "min": 0,
+      "max": 235
+    },
+    "Militia": {
+      "min": 0,
+      "max": 0
+    },
+    "Soldier": {
+      "min": 0,
+      "max": 235
+    },
+    "EliteSoldier": {
+      "min": 0,
+      "max": 235
+    },
+    "Cavalry": {
+      "min": 0,
+      "max": 235
+    },
+    "Bowman": {
+      "min": 0,
+      "max": 0
+    },
+    "Longbowman": {
+      "min": 0,
+      "max": 0
+    },
+    "Crossbowman": {
+      "min": 0,
+      "max": 235
+    },
+    "Cannoneer": {
+      "min": 0,
+      "max": 235
+    },
+    "Swordsman": {
+      "min": 0,
+      "max": 235
+    },
+    "MountedSwordsman": {
+      "min": 0,
+      "max": 235
+    },
+    "Knight": {
+      "min": 0,
+      "max": 235
+    },
+    "Marksman": {
+      "min": 0,
+      "max": 235
+    },
+    "ArmoredMarksman": {
+      "min": 0,
+      "max": 235
+    },
+    "MountedMarksman": {
+      "min": 0,
+      "max": 235
+    },
+    "Besieger": {
+      "min": 0,
+      "max": 235
+    },
+    "BattleBuffBomb_random_units_0": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffBomb_random_units_2": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffBomb_random_units_limited_3": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffBombCupidosArrow": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffBomb_random_units_limited": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffBomb_random_units": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffBomb_random_units_limited_2": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffKill_random_unit_type_limited": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffKill_random_unit_type": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffKill_random_boss_limited": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffDestroy_small_camps": {
+      "min": 0,
+      "max": 0
+    },
+    "BattleBuffDestroy_small_medium_camps": {
+      "min": 0,
+      "max": 0
+    }
+  },
+  "generals": "C:/Users/Peter/Downloads/tsowiki.eu-generals (1).json",
+  "skip_mode": "none",
+  "checked": [],
+  "lang": "en",
+  "generals_on": [
+    "Cloak",
+    "Frosty",
+    "Ghost1",
+    "Ghost2",
+    "Juan",
+    "Narci",
+    "Nutcracker",
+    "Resolute",
+    "Steadfast",
+    "Sylvana",
+    "YGG1",
+    "YGG2"
+  ]
+}
