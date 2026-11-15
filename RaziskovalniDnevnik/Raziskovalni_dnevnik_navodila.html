@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raziskovalni dnevnik: kratka navodila</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #ffffff; --text: #1d2330; --muted: #5b6475;
+    --accent: #2f6fed; --accent-soft: #e7efff; --line: #dde2ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14171f; --card: #1d2230; --text: #e8ebf2; --muted: #9aa3b5;
+            --accent: #6d9cff; --accent-soft: #22304f; --line: #2d3446; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 32px 20px 48px; }
+  header { text-align: center; margin-bottom: 28px; }
+  header h1 { margin: 0 0 6px; font-size: 30px; }
+  header p { margin: 0; color: var(--muted); }
+  h2 { font-size: 18px; margin: 32px 0 14px; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
+  .koraki { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .korak { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .num { display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center;
+         border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; margin-bottom: 10px; }
+  .korak h3 { margin: 0 0 6px; font-size: 16px; }
+  .korak p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+  code, pre { font-family: Consolas, "Courier New", monospace; }
+  pre { background: var(--accent-soft); border-radius: 8px; padding: 8px 10px; margin: 10px 0 0; font-size: 13px; overflow-x: auto; }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  ul { margin: 0; padding-left: 18px; line-height: 1.6; }
+  .tag { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 999px;
+         padding: 2px 10px; font-size: 13px; margin: 2px 4px 2px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  footer { margin-top: 28px; text-align: center; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Raziskovalni dnevnik</h1>
+    <p>Kratka navodila za delo z aplikacijo</p>
+  </header>
+
+  <h2>Namestitev in zagon</h2>
+  <div class="koraki">
+    <div class="korak">
+      <div class="num">1</div>
+      <h3>Python</h3>
+      <p>Namesti Python 3.11+ z python.org. Obkljukaj <b>Add python.exe to PATH</b>.</p>
+    </div>
+    <div class="korak">
+      <div class="num">2</div>
+      <h3>Mapa</h3>
+      <p>Odpri mapo <b>RaziskovalniDnevnik</b> in v naslovno vrstico napiši <code>powershell</code>.</p>
+    </div>
+    <div class="korak">
+      <div class="num">3</div>
+      <h3>Ollama</h3>
+      <p>Zaženi namestitev in prenos modela:</p>
+      <pre>powershell -ExecutionPolicy Bypass -File .\install_ollama.ps1</pre>
+    </div>
+    <div class="korak">
+      <div class="num">4</div>
+      <h3>Zagon</h3>
+      <p>Odpri aplikacijo:</p>
+      <pre>python main.py</pre>
+    </div>
+  </div>
+
+  <h2>Osnovna uporaba</h2>
+  <div class="grid2">
+    <div class="panel">
+      <ul>
+        <li><b>+ Nova raziskava</b>: vnesi naslov, vir in povezavo.</li>
+        <li><b>Povzemi z Ollama</b>: prilepi besedilo pogovora, klikni <i>Povzemi</i>, pregledaj in <i>Shrani kot novo stanje</i>.</li>
+        <li><b>Shrani stanje</b>: ročno popraviš trenutno stanje.</li>
+        <li><b>Komentarji</b>: opombe dodajaš z Enter ali gumbom <i>Dodaj</i>.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <p style="margin:0 0 10px"><b>Viri</b></p>
+      <span class="tag">Claude</span><span class="tag">Grok</span><span class="tag">Gemini</span><span class="tag">Drugo</span>
+      <p style="margin:14px 0 6px"><b>Statusi</b></p>
+      <span class="tag">aktivna</span><span class="tag">čakajoča</span><span class="tag">zaključena</span>
+      <p style="margin:14px 0 0; color: var(--muted); font-size:14px">Časovnica si sproti beleži vsako spremembo z datumom in uro.</p>
+    </div>
+  </div>
+
+  <h2>Pogoste težave</h2>
+  <div class="panel">
+    <table>
+      <tr><th>Težava</th><th>Rešitev</th></tr>
+      <tr><td>Ollama ni dosegljiva</td><td>Odpri aplikacijo Ollama iz menija Start.</td></tr>
+      <tr><td>Model ni najden</td><td><code>ollama pull qwen2.5:7b</code></td></tr>
+      <tr><td>Povzemanje traja dolgo</td><td>To je normalno na procesorju. Uporabi krajši pogovor.</td></tr>
+      <tr><td><code>python</code> ni prepoznan</td><td>Ponovno namesti Python z možnostjo PATH.</td></tr>
+    </table>
+  </div>
+
+  <footer>Podrobna navodila: NAVODILA.md · Podatki: C:\Users\&lt;ime&gt;\RaziskovalniDnevnik\dnevnik.db</footer>
+
+</div>
+</body>
+</html>
